@@ -21,49 +21,52 @@ class _QuoteState extends State<Quote> {
               itemBuilder: (BuildContext context, int index) {
                 return Column(
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Container(
-                            margin: EdgeInsets.only(top: 150, left: 20),
-                            child: Text("Today's",
-                                style: TextStyle(
-                                    color: Colors.yellow,
-                                    fontFamily: 'NeoSans',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 25.0)),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Container(
-                            margin: EdgeInsets.only(top: 10.0),
-                            child: Image.asset(
-                              "assets/master.png",
-                              width: 100,
-                              height: 100,
+                    // Align(
+                    //   alignment: Alignment.topLeft,
+                    //   child: Container(
+                    //     margin: EdgeInsets.only(top: 150, left: 20),
+                    //     child: Text("Today's.",
+                    //         style: TextStyle(
+                    //             color: Colors.yellow,
+                    //             fontFamily: 'NeoSans',
+                    //             fontWeight: FontWeight.bold,
+                    //             fontSize: 25.0)),
+                    //   ),
+                    // ),
+                    Container(
+                      margin: EdgeInsets.only(top: 150),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: Container(
+                              margin: EdgeInsets.only(top: 10.0),
+                              child: Image.asset(
+                                "assets/master.png",
+                                width: 100,
+                                height: 100,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Center(
-                            child: Text(
-                                snapshot.data!.docs.elementAt(index)['quote'],
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: 'NeoSans',
-                                    fontStyle: FontStyle.italic,
-                                    fontSize: 20.0)),
+                          SizedBox(
+                            height: 10,
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.all(25.0),
+                            child: Center(
+                              child: Text(
+                                  snapshot.data!.docs.elementAt(index)['quote'],
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'NeoSans',
+                                      fontStyle: FontStyle.italic,
+                                      fontSize: 20.0)),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 50,
